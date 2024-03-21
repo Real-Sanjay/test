@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<students>
+    <student>
+        <USN>1JSS001</USN>
+        <Name>John Doe</Name>
+        <College>JSS STU</College>
+        <Branch>Computer Science</Branch>
+        <YearOfJoining>2020</YearOfJoining>
+        <Email>john.doe@example.com</Email>
+    </student>
+    <student>
+        <USN>1JSS002</USN>
+        <Name>Jane Smith</Name>
+        <College>JSS STU</College>
+        <Branch>Electrical Engineering</Branch>
+        <YearOfJoining>2019</YearOfJoining>
+        <Email>jane.smith@example.com</Email>
+    </student>
+    <student>
+        <USN>1JSS003</USN>
+        <Name>Alice Johnson</Name>
+        <College>JSS STU</College>
+        <Branch>Mechanical Engineering</Branch>
+        <YearOfJoining>2021</YearOfJoining>
+        <Email>alice.johnson@example.com</Email>
+    </student>
+</students>

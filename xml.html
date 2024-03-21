@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Information</title>
+<style>
+    /* Style for the entire document */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+    
+}
+
+/* Style for the student information */
+student {
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Style for each student attribute */
+student > * {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style for the student name */
+student > Name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Style for the heading */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+</style>
+</head>
+<body>
+    <h1>Student Information</h1>
+    <div id="xmlContent"></div>
+
+    <script>
+        // Load XML document
+        fetch('student.xml')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, 'application/xml');
+                document.getElementById('xmlContent').innerHTML = new XMLSerializer().serializeToString(xmlDoc.documentElement);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

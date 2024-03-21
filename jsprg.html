@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Functions</title>
+<script>
+    // Function to find the position of the left-most vowel in a string
+    function findLeftMostVowelPosition(str) {
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+        for (let i = 0; i < str.length; i++) {
+            if (vowels.includes(str[i].toLowerCase())) {
+                return i + 1; // Adding 1 to make the position human-readable (1-indexed)
+            }
+        }
+        return -1; // Return -1 if no vowel is found
+    }
+
+    // Function to reverse the digits of a number
+    function reverseNumberDigits(num) {
+        const reversedNum = parseInt(num.toString().split('').reverse().join(''));
+        return reversedNum;
+    }
+
+    // Function to handle form submission for problem a
+    function findVowelPosition() {
+        const inputString = document.getElementById('inputString').value;
+        const result = findLeftMostVowelPosition(inputString);
+        document.getElementById('resultA').textContent = result !== -1 ? `Position of left-most vowel: ${result}` : "No vowel found in the string.";
+    }
+
+    // Function to handle form submission for problem b
+    function reverseDigits() {
+        const inputNumber = parseFloat(document.getElementById('inputNumber').value);
+        const result = reverseNumberDigits(inputNumber);
+        document.getElementById('resultB').textContent = `Number with digits reversed: ${result}`;
+    }
+</script>
+</head>
+<body>
+    <h2>Problem a: Find the position of the left-most vowel in a string</h2>
+    <form onsubmit="event.preventDefault(); findVowelPosition();">
+        <label for="inputString">Enter a string:</label>
+        <input type="text" id="inputString" required>
+        <button type="submit">Find Position</button>
+    </form>
+    <p id="resultA"></p>
+
+    <h2>Problem b: Reverse the digits of a number</h2>
+    <form onsubmit="event.preventDefault(); reverseDigits();">
+        <label for="inputNumber">Enter a number:</label>
+        <input type="number" id="inputNumber" required>
+        <button type="submit">Reverse Digits</button>
+    </form>
+    <p id="resultB"></p>
+</body>
+</html>
